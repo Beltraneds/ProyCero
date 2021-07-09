@@ -1,0 +1,115 @@
+/*------------SECTOR DE FORMULARIO------------*/
+
+.contenedor-input{
+    padding: 15px 25px;
+    display: block;
+    justify-content: space-between;
+}
+
+.form-registro{
+    background:rgb(15, 209, 235);
+    width: 95%;
+    margin: auto;
+    max-width: 500px;
+    border-radius: 6px;
+    border: 3px solid black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.form-titulo{
+    background: rgba(145, 47, 236, 0.884);
+    padding: 20px;
+    text-align: center;
+    border-bottom: solid 3px brown;
+    color: white;
+    border-radius: 3px 3px 0px 0px;
+}
+
+#formulario{
+    padding-top: 100px;
+    font-size: 20px;
+    color: black;
+    padding-bottom: 50px; 
+}
+
+#formulario .linkini{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+}
+
+#formulario .sin-pass{
+    text-align: left;
+}
+
+#formulario .sin-pass a{
+    padding-left: 15px;
+    font-family: sans-serif;
+    color: white;
+    font-size: medium;
+}
+
+#formulario .linkini a{
+    font-family: sans-serif;
+    color: white;
+    font-size: medium;
+}
+
+#formulario .linkini a:hover{
+    color: rgb(255, 229, 79);  
+}
+
+#formulario .linkini .btn-registrar{
+    background-color: rgba(145, 47, 236, 0.884);
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    /*15px Arriba - 0px Derecha - 10px Abajo - 0px Izquierda*/
+    margin: 15px 0px 10px 0px;
+}
+
+#formulario .linkini .btn-registrar:hover{
+    background-color: palegoldenrod;
+    border: 2px solid rgba(145, 47, 236, 0.884);
+    font-weight: bold;
+    color: purple;
+}
+
+#formulario .boton .btn-registrar{
+    background-color: rgba(145, 47, 236, 0.884);
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    /*15px Arriba - 0px Derecha - 10px Abajo - 0px Izquierda*/
+    margin: 15px 0px 10px 0px;
+    font-family: sans-serif;
+}
+
+#formulario .boton .btn-registrar:hover{
+    background-color: palegoldenrod;
+    border: 2px solid rgba(145, 47, 236, 0.884);
+    font-weight: bold;
+    color: purple;
+}
+
+#formulario .row h2{
+    padding-top: 5px;
+    margin-top: 10px;
+    color: black;
+    font-size: 20px;
+}
+
+#formulario input{
+    padding: 10px;
+}
+
+#formulario .row #cboCategoria{
+    padding: 10px;
+}
+/*--------------------------------------------------------------------*/
+
+.col-xl{
+    border-radius: 5px; 
+    font-size: medium;
+}

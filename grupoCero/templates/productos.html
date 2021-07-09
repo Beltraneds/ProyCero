@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<section id="tarjetas">
+    <div style="text-align: center;padding: 10px; font-family: fantasy;">
+        <h1>Nuestros productos</h1>
+    </div>
+
+    <div class="filtros">
+        <div class="row">
+            <form class="col-3" action="{% url 'FILTROC' %}" method="post">
+                {% csrf_token %}
+                <h5>Filtro por tipo de arte:</h5>
+                <select name="cboCategoria" id="cboCategoria">
+                    {% for reg in categorias %}
+                    <option>{{reg.nombre}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Filtrar">
+            </form>
+        </div>
+
+        <div class="row">
+            <form class="col-3" action="{% url 'BUSCARA' %}" method="post">
+                {% csrf_token %}
+                <h5>Búsqueda por nombre de Artista:</h5>
+                <input type="text" name="txtNombre" id="txtNombre">
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+
+        <div class="row">
+            <form class="col-3" action="{% url 'FILCON' %}" method="post">
+                {% csrf_token %}
+                <h5>Búsqueda por concepto:</h5>
+                <input type="text" name="txtConc" id="txtConc">
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+    </div>
+
+    <div class="info">
+
+        {% for reg in obras %}
+        <div class="row">
+            <div class="col-md">
+                <div class="cuerpo">
+                    <div class="card shadow">
+                        <a href="{{reg.imagen.url}}">
+                            <img src="{{reg.imagen.url}}" width="400" height="280px" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <h4>{{reg.nombre}}</h4>
+            <a style="padding-bottom: 50px;" href="{% url 'INFO' reg.nombre %}">Leer más</a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div style="text-align: center; font-family: fantasy; color: darkred; font-size: xx-large;">
+        {{cantidad}}{{texto}}
+    </div>
+
+    <div class="titulo" style="font-family: fantasy; padding-top: 30px;">
+        <h2>Pronto mucho más...</h2>
+    </div>
+</section>
+{% endblock contenido %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+{% endblock js %}

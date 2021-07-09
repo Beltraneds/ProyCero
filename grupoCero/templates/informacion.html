@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+    <!--Información del producto-->
+    <div class="info">
+        <h2 style="padding: 20px;" >Información del Producto</h2>
+        <div class="row">
+            <div class="col-md">
+                <div class="card shadow">
+                    <img src="{{obra.imagen.url}}" height="auto" alt="">
+                </div>
+            </div>
+
+            <div class="col-xl">
+
+                <div class="card-body card shadow">
+                    <h3>{{obra.nombre}}</h3>
+                    <p class="card-text">
+                        <h5>HISTORIA:</h5> {{obra.historia}}
+                    </p>
+
+                    <p class="card-text">
+                        <h5>DESCRIPCIÓN:</h5> {{obra.descripcion}}
+                    </p>
+
+                    <p class="card-text">
+                        <h5>TÉCNICA USADA:</h5> {{obra.tecnica}}
+                    </p>
+
+                    <p class="card-text">
+                        <h5>PRECIO:</h5> {{obra.precio}}
+                    </p>
+
+                    <p class="card-text">
+                        <h5>CATEGORÍA:</h5> {{obra.categoria.nombre}}
+                    </p>
+
+                    <p class="card-text">
+                        <h5>ARTISTA:</h5> {{obra.artista}}
+                    </p>
+                </div>
+
+                <input type="button" value="Valor del Dolar" onclick="recuperaDolar()">
+                <div id="valor_dolar"></div>
+                <script>
+                    function recuperaDolar() {
+                        fetch("https://mindicador.cl/api/dolar")      /*fetch() --> permite dirigirse a una direccion y recuperar info desde ella*/
+                            .then(function (response) {
+                                //status 200 --> 'OK'
+                                if (response.status != 200) {
+                                    alert("No pudo contectar con el servidor");
+                                    return;
+                                }
+                                response.json().then(function (data) {
+                                    console.log(data);
+                                    var dolar = Math.round(data.serie[0].valor);
+                                    document.getElementById('valor_dolar').innerHTML =  "$"+dolar+" pesos chilenos";
+                                })
+                            })
+                    }
+                </script>
+
+            </div>
+        </div>
+    </div>
+    <div class="imagenes">
+        <h5 style="text-align: center; font-family: fantasy; font-size: xx-large;padding-bottom: 30px;">Galería de imágenes de este producto</h5>
+        {% for reg in galeria %}
+            <img src="{{reg.imagen.url}}" width="250px" height="250px" alt="">
+        {% endfor %}
+    </div>
+{% endblock contenido %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+{% endblock js %}
+    

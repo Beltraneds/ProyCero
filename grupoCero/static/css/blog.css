@@ -1,0 +1,26 @@
+#blog{
+    font-family: cursive;
+    text-align: center;
+}
+
+#blog .contenedor img{
+    width: 350px;
+    height: 250px;
+    border: solid 3px seagreen;
+    border-radius: 20px;
+}
+
+#blog .contenedor{
+    display: flex; /*se desplegaran de forma flexible, 1 al lado de otro*/
+    justify-content: center; /*centrar contenido*/
+    margin-top: 30px;
+    flex-wrap: wrap; /*se adapta si no calza en el dispositivo*/
+}
+
+#blog .contenedor article{
+    margin: 10px;
+}
+
+#blog .contenedor img:hover{
+    filter: opacity(0.6);
+}

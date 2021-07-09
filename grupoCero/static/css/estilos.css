@@ -1,0 +1,109 @@
+@import url(imagenes.css);
+@import url(formulario.css);
+@import url(bienvenida.css);
+@import url(galeria_index.css);
+@import url(info_producto.css);
+@import url(blog.css);
+@import url(productos.css);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#menu{
+    width: 100%;
+    z-index: 100;
+    position: static;
+}
+
+#menu .navbar{
+    background-color: deepskyblue;
+    padding: 0;
+}
+
+#menu .container-fluid img{
+    border: solid 2px black;
+    border-radius: 5px;
+    width: 60px; 
+    height: 60px;
+}
+
+#menu .container-fluid .navbar-toggler{
+    background: palegoldenrod;
+    color: green;
+}
+/*Nombre pagina*/
+#menu .navbar-brand{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+    color: black;
+}
+/*Elementos menu*/
+#menu .navbar-nav .nav-item a{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    color: black;
+    padding-top: 21px;
+    padding-bottom: 22px;
+}
+
+#menu .navbar-nav .nav-item a:hover{
+    background: palegoldenrod;
+    transition: 0.8s;
+    margin-right: 10px;
+}
+#menu .navbar-nav .nav-item .dropdown-menu{
+    background: deepskyblue;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: auto;
+}
+/*Botón Buscar*/
+#menu .d-flex{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.d-flex button{
+    background: palegoldenrod;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    height: 45px;
+    border: 1px solid green;
+}
+
+#menu .d-flex button:hover{
+    background: green;
+    border: 1px solid white;
+    color: palegoldenrod;
+}
+/*Cabecera*/
+.header h3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    color: black;
+    text-align: center;
+    padding: 5px;
+}
+
+.header{
+    background: rgba(139, 223, 29, 0.87);
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+
+/*footer*/
+footer{
+    height: 100px;
+}
+
+footer .contenedor{
+    background: deepskyblue;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+footer .contenedor p{
+    padding-top: 50px;
+}

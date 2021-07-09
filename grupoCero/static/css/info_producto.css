@@ -1,0 +1,22 @@
+.info{
+    padding-bottom: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: auto;
+    position: relative;
+}
+.info h2{
+    text-align: center;
+}
+
+.info .card.shadow img{
+    border-radius: 10px;
+}
+
+.info .card-body{
+    height: auto;
+    background-color: rgba(195, 255, 85, 0.589);
+}
+
+.info .cuerpo .card.shadow {
+    background-color: rgba(195, 255, 85, 0.589);
+}

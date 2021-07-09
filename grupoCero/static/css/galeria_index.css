@@ -1,0 +1,21 @@
+.galeria{
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 20px;
+}
+
+.galeria h2{
+    text-align: center;
+    padding: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.galeria img{
+    border-radius: 10px 10px 0 0;
+}
+
+.galeria .card{
+    border-radius: 10px;
+}
+
+

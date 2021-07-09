@@ -1,0 +1,9 @@
+
+
+.filtros form{
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    border: solid 3px rgb(0, 39, 148);
+    border-radius: 4px;
+}

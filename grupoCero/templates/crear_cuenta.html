@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+    <!--sección de formulario creación de cuenta-->
+    <section id="formulario">
+        <form class="form-registro" action="{% url 'CREAC' %}" method="post">
+            {% csrf_token %}
+
+            <h2 class="form-titulo">Crear Usuario</h2>
+
+            <div class="contenedor-input">
+                <div class="row">
+                    <h2 class="col-12">Correo electrónico:</h2>
+                    <input class="col-xl" type="email" name="txtEmail" id="" placeholder="Ingrese su correo..." required
+                        minlength="8">
+                </div>
+
+                <div class="row">
+                    <h2 class="col-12">Nombre Usuario:</h2>
+                    <input class="col-xl" type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese su nombre..."
+                        required minlength="3">
+                </div>
+
+                <div class="row">
+                    <h2 class="col-12">Contraseña:</h2>
+                    <input class="col-xl" type="password" name="txtPass" id="txtPass" placeholder="Ingrese su contraseña..."
+                        required minlength="5" maxlength="10">
+                </div>
+
+                <div class="row">
+                    <h2 class="col-12">Repita la contraseña:</h2>
+                    <input class="col-xl" type="password" name="txtPass2" id="txtPass2" placeholder="Repita su contraseña..."
+                        required minlength="5" maxlength="10">
+                </div>
+
+                <div class="linkini">
+                    <input class="btn-registrar" type="submit" value="Registrar">
+                    <input class="btn-registrar" type="reset" value="Limpiar">
+
+                    <hr>
+                    <h7>¿Ya tienes una cuenta?</h7>
+                    <a href="inicio_sesion.html">Iniciar Sesión</a>
+                </div>
+            </div>
+        </form>
+        <div style="text-align: center; color: darkred; font-size: xx-large; font-family: fantasy;">
+            {{mensaje}}
+        </div>
+    </section>
+    
+{% endblock contenido %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+{% endblock js %}

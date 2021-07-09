@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<section id="bienvenida">
+    <h2>Sistema de administración de Obras</h2>
+    <h3>Bienvenido: {{user.first_name}} {{user.last_name}}</h3>
+    <h4>Usuario: {{user.username}}</h4>
+</section>
+<!--sección de formulario creación de cuenta-->
+<section id="formulario">
+    <form class="form-registro" action="{% url 'MODIFI' %}" method="POST" onsubmit="return validar()"
+        enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h2 class="form-titulo">Modificar obra</h2>
+
+        <div class="contenedor-input">
+
+            <div class="row">
+                <h2 class="col-12">Nombre de la obra:</h2>
+                <input class="col-xl" type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese nombre..."
+                    required minlength="3" value="{{obra.nombre}}">
+            </div>
+
+            <div class="row">
+                <h2 class="col-12">Historia:</h2>
+                <textarea class="col-xl" type="text" name="txtHistoria" id="txtHistoria"
+                    placeholder="Ingrese historia..." required minlength="5">{{obra.historia}}</textarea>
+            </div>
+
+            <div class="row">
+                <h2 class="col-12">Descripción:</h2>
+                <textarea class="col-xl" type="text" name="txtDesc" id="txtDesc" placeholder="Ingrese descripción..."
+                    required minlength="5">{{obra.descripcion}}</textarea>
+            </div>
+
+            <div class="row">
+                <h2 class="col-12">Técnica usada:</h2>
+                <input class="col-xl" type="text" name="txtTecnica" id="txtTecnica" placeholder="Ingrese texto..."
+                    required minlength="3" value="{{obra.tecnica}}">
+            </div>
+
+            <div class="row">
+                <h2 class="col-12">Precio:</h2>
+                <input class="col-xl" type="text" name="txtPrecio" id="txtPrecio" placeholder="Ingrese precio..."
+                    required minlength="3" value="{{obra.precio}}">
+            </div>
+
+            <div class="row" style="margin: 10px;">
+                <div class="col-sm">
+                    Imágen Actual: <a style="text-decoration: none; color: blue;" href="{{obra.imagen.url}}">{{obra.imagen.url}}</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <input class="col-xl" type="file" name="txtImg" id="txtImg">
+            </div>
+
+            <div class="row">
+                <h2 class="col-12">Categoría:</h2>
+                <select class="col-xl" name="cboCategoria" id="cboCategoria">
+                    {% for reg in categorias %}
+                    {% if reg.nombre == obra.categoria.nombre %}
+                        <option selected value="{{reg.nombre}}">{{reg.nombre}}</option>
+                    {% else %}
+                        <option value="{{reg.nombre}}">{{reg.nombre}}</option>
+                    {% endif %}   
+                    {% endfor %}
+                </select>
+            </div>
+
+    
+
+            <div class="linkini">
+                <input class="btn-registrar" type="submit" value="Modificar">
+                <input class="btn-registrar" type="button" value="Cancelar">
+
+                <hr>
+                <h7>¿Ya tienes una cuenta?</h7>
+                <a href="inicio_sesion.html">Iniciar Sesión</a>
+            </div>
+
+        </div>
+    </form>
+</section>
+
+<div class="listado" style="text-align: center; color: black; background-color: darkcyan; font-size: xx-large;">
+    {{mensaje}}
+</div>
+
+
+{% endblock contenido %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+{% endblock js %}

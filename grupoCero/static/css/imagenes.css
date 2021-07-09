@@ -1,0 +1,12 @@
+.imagenes img{
+    border: solid 5px rgb(3, 160, 73);
+    border-radius: 7px;
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 15px;
+
+}
+.imagenes{
+    margin: auto;
+    padding-bottom: 20px;
+}
